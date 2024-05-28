@@ -1,0 +1,16 @@
+name: nelcauthsamlmain
+recipe: lamp
+config:
+  webroot: web
+  php: 7.4
+  database: mysql:5.7
+  env: dev
+  #config:
+    #php: config/php.ini
+    #database: config/mysql.cnf
+    #vhosts: config/vhosts.conf
+proxy:
+  appserver:
+    - local.authsaml.nelc.gov.sa
+env_file:
+  - .lando.env
