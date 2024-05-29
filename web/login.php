@@ -26,9 +26,13 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+    <script src="assets/dist/js/bootstrap-hijri-datetimepicker.js"></script>
 
     <!-- Custom styles for this template -->
     <!-- <link href="assets/signin.css" rel="stylesheet"> -->
+    <link href="assets/dist/css/bootstrap-datetimepicker.css" rel="stylesheet" />
 
     <style>
       .bd-placeholder-img {
@@ -50,6 +54,7 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
   </head>
 
   <body class="bg-light">
+
 
 
     <form class="form-signin">
@@ -148,7 +153,7 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
 
 
-                    <h4 class="mb-3">الاسم باللغة العربية</h4>
+      <h4 class="mb-3">الاسم باللغة العربية</h4>
       <div class="needs-validation">
         <div class="row">
           <div class="col-md-3 mb-3">
@@ -193,16 +198,16 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
-            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" for="credit">مقيم</label>
+            <input id="muqeem" name="paymentMethod" type="radio" value="Muqeem" class="custom-control-input" checked>
+            <label class="custom-control-label" for="muqeem">مقيم</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" for="debit">مواطن</label>
+            <input id="saudi" name="paymentMethod" type="radio" value="Saudi" class="custom-control-input">
+            <label class="custom-control-label" for="saudi">مواطن</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" for="paypal">أخرى</label>
+            <input id="other" name="paymentMethod" type="Other" class="custom-control-input">
+            <label class="custom-control-label" for="other">أخرى</label>
           </div>
         </div>
 
@@ -274,25 +279,35 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
             <input type="text" class="form-control" id="nationality" name="nationality" placeholder="" value="">
           </div>
           <div class="col-md-3 mb-3">
-            <label for="lastName">كود الجنسية</label>
+            <label for="lastName">101-901 كود الجنسية</label>
             <input type="text" class="form-control" id="nationalityCode" name="nationalityCode" placeholder="" value="">
           </div>
 
+          <h4 class="mb-3">الجنس</h4>
           <div class="d-block my-3">
             <div class="custom-control custom-radio">
-                <input id="male" name="gender" type="radio" class="custom-control-input">
+                <input id="male" name="gender" type="radio" value="Male" class="custom-control-input">
                 <label class="custom-control-label" for="male">ذكر</label>
             </div>
             <div class="custom-control custom-radio">
-                <input id="female" name="gender" type="radio" class="custom-control-input">
+                <input id="female" name="gender" type="radio" for="Female" class="custom-control-input">
                 <label class="custom-control-label" for="female">انثى</label>
             </div>
           </div>
 
-          <div class="col-md-3 mb-3">
-            <label for="lastName">اللغة</label>
-            <input type="text" class="form-control" id="lang" name="lang" placeholder="" value="">
+          <h4 class="mb-3">اللغة</h4>
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+                <input id="ar" name="lang" type="radio" value="AR" class="custom-control-input">
+                <label class="custom-control-label" for="ar">العربية</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input id="en" name="lang" value="EN" type="radio" class="custom-control-input">
+                <label class="custom-control-label" for="en">الانجليزية</label>
+            </div>
           </div>
+
+
 
           <div class="col-md-3 mb-3">
             <label for="lastName">اللغة المفضلة</label>
@@ -315,6 +330,20 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
 
 
+    <script type="text/javascript">
+    $(function () {
+        $("#dob").hijriDatePicker();
+        $("#dobHijri").hijriDatePicker();
+        $("#idExpiryDateHijri").hijriDatePicker();
+        $("#cardIssueDateHijri").hijriDatePicker();
+        $("#iqamaExpiryDateHijri").hijriDatePicker();
+
+        $("#idExpiryDateGregorian").hijriDatePicker();
+        $("#cardIssueDateGregorian").hijriDatePicker();
+        $("#iqamaExpiryDateGregorian").hijriDatePicker();
+
+    });
+    </script>
 
   </body>
 </html>
