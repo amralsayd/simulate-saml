@@ -57,7 +57,7 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
 
 
-    <form class="form-signin">
+    <form class="form-signin" action="post-saml.php">
         
 
 
@@ -124,7 +124,7 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
         <label for="inputEmail" class="sr-only">National ID</label>
         <input type="text" id="inputEmail" name="username" class="form-control" placeholder="NationalId" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" >
         <!-- <div class="checkbox mb-3">
             <label>
             <input type="checkbox" value="remember-me"> Remember me
@@ -134,6 +134,7 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
         <input type="hidden" name="SAMLRequest" value="<?php print $request->get("SAMLRequest") ?>">
         <input type="hidden" name="RelayState" value="<?php print $request->get("RelayState") ?>">
 
+        <br>
 
 
 
@@ -147,7 +148,7 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
                     </h5>
                     </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         
 
