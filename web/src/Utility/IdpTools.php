@@ -3,6 +3,7 @@
 class IdpTools{
 
   /**
+   * test 2
    * Reads a SAMLRequest from the HTTP request and returns a messageContext.
    *
    * @param \Symfony\Component\HttpFoundation\Request $request
