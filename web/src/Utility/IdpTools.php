@@ -8,6 +8,8 @@ class IdpTools{
    *
    * @param \Symfony\Component\HttpFoundation\Request $request
    *   The HTTP request.
+   * 
+   * Q1
    *
    * @return \LightSaml\Context\Profile\MessageContext
    *   The MessageContext that contains the SAML message.
