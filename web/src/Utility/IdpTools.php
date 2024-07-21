@@ -39,6 +39,8 @@ class IdpTools{
 
   /**
    * Constructs a SAML Response.
+   * D2
+   * D3
    *
    * @param \IdpProvider $idpProvider
    * @param $user_id
