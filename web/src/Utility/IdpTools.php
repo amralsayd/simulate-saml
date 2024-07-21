@@ -10,7 +10,6 @@ class IdpTools{
    *
    * @return \LightSaml\Context\Profile\MessageContext
    *   The MessageContext that contains the SAML message.
-   *
    * check delete commit but key changes
    * check delete commit but key changes2
    * check delete commit but key changes 3
